@@ -72,7 +72,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 itemCount: snapshot.data!.length,
                 itemBuilder: (context, i) {
                   return ListTile(
+                    leading: Image.network(snapshot.data![i].thumbnailUrl),
                     title: Text(snapshot.data![i].title),
+                    subtitle: Text("ID: " +
+                        snapshot.data![i].id.toString() +
+                        "\nAlbum ID: " +
+                        snapshot.data![i].albumId.toString()),
                   );
                 },
               );
